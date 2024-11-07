@@ -43,14 +43,13 @@
             color: #f1f1f1;
             line-height: 1.6;
         }
-        /* Stile per l'immagine di Billy */
+        /* Stile per l'immagine di Billy sotto il countdown */
         .billy {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            width: 100px;
+            display: block;
+            margin: 20px auto 0;
+            width: 80%; /* Puoi cambiare la percentuale per aumentare o diminuire la dimensione */
+            max-width: 250px;
             opacity: 0.9;
-            z-index: 5;
         }
     </style>
 </head>
@@ -62,10 +61,10 @@
         entro il tempo devi fare.<br>
         Altrimenti anche il quarto giorno<br>
         cadrò nel profondo sonno.</div>
+        
+        <!-- Immagine di Billy sotto il countdown -->
+        <img src="billy.png" alt="Billy the Puppet" class="billy">
     </div>
-
-    <!-- Immagine di Billy -->
-    <img src="billy.png" alt="Billy the Puppet" class="billy">
 
     <!-- Musica di sottofondo -->
     <audio autoplay loop>
@@ -100,3 +99,4 @@
     </script>
 </body>
 </html>
+
