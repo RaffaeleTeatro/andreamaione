@@ -43,11 +43,10 @@
             color: #f1f1f1;
             line-height: 1.6;
         }
-        /* Stile per l'immagine di Billy sotto il countdown */
         .billy {
             display: block;
             margin: 20px auto 0;
-            width: 80%; /* Puoi cambiare la percentuale per aumentare o diminuire la dimensione */
+            width: 80%;
             max-width: 250px;
             opacity: 0.9;
         }
@@ -67,10 +66,8 @@
     </div>
 
     <!-- Musica di sottofondo -->
-    <audio autoplay loop>
+    <audio id="background-audio" loop>
         <source src="hello_zepp.mp3" type="audio/mpeg">
-        <source src="hello_zepp.ogg" type="audio/ogg">
-        Il tuo browser non supporta l'elemento audio.
     </audio>
 
     <script>
@@ -94,6 +91,14 @@
                 countdownElement.innerHTML = `${hours}h ${minutes}m ${seconds}s`;
             }, 1000);
         }
+
+        // Forza la riproduzione dell'audio al caricamento della pagina
+        window.addEventListener('load', function() {
+            const audio = document.getElementById('background-audio');
+            audio.play().catch(error => {
+                console.error("Errore durante l'avvio dell'audio:", error);
+            });
+        });
 
         startCountdown();
     </script>
